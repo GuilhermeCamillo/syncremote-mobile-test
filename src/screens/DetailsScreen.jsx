@@ -12,9 +12,11 @@ const DetailsScreen = ({ route, navigation }) => {
       {city && <Text>{`City: ${city}`}</Text>}
       {position && <Text>{`Position: ${position}`}</Text>}
       {schoolName && <Text>{`School: ${schoolName}`}</Text>}
-      {interest && interest.length > 0 && (
-        <Text>{`Interests: ${interest.join(", ")}`}</Text>
-      )}
+      <Text>{`Interests: ${
+        interest && interest.length > 0
+          ? interest.join(", ")
+          : "there are no interests"
+      }`}</Text>
     </View>
   );
 };
